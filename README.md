@@ -402,14 +402,18 @@
      - Yêu cầu phải chạy dưới quyền root
      - Thực hiện lệnh ``` cd Desktop``` và ``` bash relay.sh``` để chạy script
      - Và nhập địa chỉ ip của máy server ```192.168.1.1``` như hình:
+       
      - ![Screenshot 2024-10-03 123127](https://github.com/user-attachments/assets/71d0e2f2-f8b9-4ac6-9c73-73de1a734da6)
 
        
 
   - **5. Kiểm tra trên máy client đã nhận ip chưa**
     -Cấu hình ip trên máy client để nhận dhcp
+    
     ![image](https://github.com/user-attachments/assets/a07413ea-3976-4638-a2d6-d59900e02ef7)
+    
     -Kiểm tra đã nhận được ip cấp phát đúng mong đợi
+    
     ![Screenshot 2024-10-03 123250](https://github.com/user-attachments/assets/3abbc71c-530a-4a12-8e7f-8ff4bdf65a9b)
 
 
