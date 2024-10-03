@@ -27,7 +27,6 @@
   - ```C++
     sudo sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/*.repo
     sudo sed -i s/^#.*baseurl=http/baseurl=http/g /etc/yum.repos.d/*.repo
-    sudo sed -i s/mirrorlist.centos.org/vault.centos.org/g /etc/yum.repos.d/*.repo
     sudo sed -i s/^mirrorlist=http/#mirrorlist=http/g /etc/yum.repos.d/*.repo
     ```
   - Update lại gói yum bằng ```yum update -y``` và tiến hành ```reboot```
