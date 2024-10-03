@@ -10,8 +10,7 @@
   - **2. Tạo Scope**
   - **3. Kiểm tra đã cung cấp ip trên client chưa**
   - **4. Tạo host**
-  - **5. Khởi động dịch vụ DHCP**
-  - **6. Các bước kiểm tra host trên máy client**
+  - **5. Khởi động lại dịch vụ DHCP và card mạng trên máy client**
 - **III. Chạy autoscript cấu hình  DHCP RELAY AGENT**
   - **1. Chọn card mạng và điều chình cấu hình ip tĩnh **     
   - **2. chạy script và tạo Scope trên máy server**
@@ -337,24 +336,82 @@
     
       
   - **2. chạy script và tạo Scope**
+    - Yêu cầu phải cài đặt gói dhcp 
     - Yêu cầu phải chạy dưới quyền root
     - Thực hiện lệnh ``` cd Desktop``` và ``` bash dhcp.sh``` để chạy script
     - Chọn tạo scope và nhập như sau:
-    - 
-    - Sau đó chọn chạy DHCP
+    - ![Screenshot 2024-10-03 115123](https://github.com/user-attachments/assets/62b3f710-ba2a-4035-a97f-cb1c30711b8c)
+
+    - Sau đó chọn nhập 8 để chạy dịch vụ DHCP
+      
       
   - **3. Kiểm tra đã cung cấp ip trên client chưa**
-    -Sau khi tạo 
+    -Cấu hình ip trên máy client để nhận dhcp
+    ![image](https://github.com/user-attachments/assets/a07413ea-3976-4638-a2d6-d59900e02ef7)
+    
+    -Kiểm tra đã nhận được ip chưa
+    ![Screenshot 2024-10-03 115556](https://github.com/user-attachments/assets/a67f9807-aed7-4720-9fdf-0d6d4a44bd24)
+
   - **4. Tạo host**
-  - **5. Khởi động lại dịch vụ DHCP**
-  - **6. Các bước kiểm tra host trên máy client**
+   - Tiếp tục quay lại máy server  và chọn 5 để tạo host cấu hình như sau
+   - ![Screenshot 2024-10-03 115802](https://github.com/user-attachments/assets/8df41bdb-f19e-4d4c-8ed2-283f15005dd6)
+     
+  - **5. Khởi động lại dịch vụ DHCP và card mạng trên máy client**
+   - Chọn 10 để khởi động lịch dịch vụ dhcp 
+   - Xem địa chỉ Ip đã thay đổi
+  - ![Screenshot 2024-10-03 115830](https://github.com/user-attachments/assets/932e38cf-6707-4564-bd23-0df0981fd1db)
+
 - **III. Chạy autoscript cấu hình  DHCP RELAY AGENT**
-  - **1. Chọn card mạng và điều chình cấu hình ip tĩnh **     
+  - **1. Chọn card mạng và điều chình cấu hình ip tĩnh **
+     -Chọn card mạng cho máy server là VMnet1
+    ![Screenshot 2024-10-03 120909](https://github.com/user-attachments/assets/53ae117c-771d-4f0e-8cbe-d354664676d5)
+
+     -Chọn cho máy relay là 1 card mạng VMnet1 và 1 card mạng VMnet2
+    ![Screenshot 2024-10-03 120923](https://github.com/user-attachments/assets/fea33db9-618f-4d5a-841d-674a27a6794e)
+
+     -Chọn cho máy client là VMnet2 để nhận ip từ máy relay
+    ![Screenshot 2024-10-03 120949](https://github.com/user-attachments/assets/0bf04574-f175-452c-abc8-8eef50adcf29)
+
+     -Cấu hình ip tĩnh cho máy server với địa chỉ ip là ``` 192.168.1.1``` như hình sau:
+     ![image](https://github.com/user-attachments/assets/52db2c09-3f1b-4cea-b3e1-9c4e3aa6471b)
+
+     -Cấu hình ip tĩnh cho card mạng VMnet1 của máy relay là ```192.168.1.2``` như hình sau:
+    
+	![Screenshot 2024-10-03 122939](https://github.com/user-attachments/assets/0a927d6b-2066-4e08-81d9-f86bfb88720a)
+
+     -Cấu hình ip tĩnh cho card mạng VMnet2 của máy relay là ```192.168.2.1``` như hình sau :
+    ![Screenshot 2024-10-03 123035](https://github.com/user-attachments/assets/cc1df339-cdba-40ba-8188-abaaed8774f2)
+
+    
   - **2. chạy script và tạo Scope trên máy server**
-  - **3. Khởi động dịch vụ DHCP**
+     - Yêu cầu phải cài đặt gói dhcp
+     - Yêu cầu phải chạy dưới quyền root
+     - Thực hiện lệnh ``` cd Desktop``` và ``` bash dhcp.sh``` để chạy script
+     - Chọn tạo scope và nhập như sau:
+      	- 1 Scope mang subnet là ```192.168.1.0```
+      	![Screenshot 2024-10-03 122433](https://github.com/user-attachments/assets/87004c96-6a86-4093-9a5b-985e78dd6afa)
+
+         
+     	- 1 Scope mang subnet là ```192.168.2.0```
+   	
+        ![Screenshot 2024-10-03 122610](https://github.com/user-attachments/assets/314a9e08-f388-4c5f-8990-da498bcccece)
+
+	- Sau đó chọn 8 để khởi động dịch vụ dhcp
   - **4. chạy script reylay trên máy relay **
-  - **5. Khởi động dịch vụ DHCP**
-  - **6. Các bước kiểm tra host trên máy client**  
+     - Yêu cầu phải cài đặt gói dhcp
+     - Yêu cầu phải chạy dưới quyền root
+     - Thực hiện lệnh ``` cd Desktop``` và ``` bash relay.sh``` để chạy script
+     - Và nhập địa chỉ ip của máy server ```192.168.1.1``` như hình:
+     - ![Screenshot 2024-10-03 123127](https://github.com/user-attachments/assets/71d0e2f2-f8b9-4ac6-9c73-73de1a734da6)
+
+       
+
+  - **5. Kiểm tra trên máy client đã nhận ip chưa**
+    -Cấu hình ip trên máy client để nhận dhcp
+    ![image](https://github.com/user-attachments/assets/a07413ea-3976-4638-a2d6-d59900e02ef7)
+    -Kiểm tra đã nhận được ip cấp phát đúng mong đợi
+    ![Screenshot 2024-10-03 123250](https://github.com/user-attachments/assets/3abbc71c-530a-4a12-8e7f-8ff4bdf65a9b)
+
 
 
 
