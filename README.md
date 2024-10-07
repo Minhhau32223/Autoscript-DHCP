@@ -306,7 +306,8 @@
     ```
 
     
-- Chuẩn bị đoạn script để cấu hình dhcp relay với tên file được đặt là ```relay.sh```
+- Chuẩn bị đoạn script để cấu hình dhcp relay agent với tên file được đặt là ```relay.sh```
+  
 
   
   ```C++
@@ -416,7 +417,7 @@
     ![Screenshot 2024-10-03 123250](https://github.com/user-attachments/assets/3abbc71c-530a-4a12-8e7f-8ff4bdf65a9b)
 
 
-
+Người thực hiện: Trần Gia Bảo và Nguyễn Minh Hậu
 
 
 
