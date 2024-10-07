@@ -33,7 +33,7 @@
 - **2 . Cài đặt gói DHCP để cấu hình**
   - Tiến hành cài đặt gói DHCP để cấu hình DHCP: ```yum install dhcp* -y```
 - **3. Chuẩn bị script**
-  - Chuẩn bị đoạn script để cấu hình dhcp với tên file được đặt là ```dhcp.sh```
+  - Chuẩn bị đoạn script để cấu hình dhcp với tên file được đặt là ```dhcp.sh``` trên máy DHCP Server
     ```C+
         #!/bin/bash
         #---------------Khai báo biến
@@ -306,7 +306,7 @@
     ```
 
     
-- Chuẩn bị đoạn script để cấu hình dhcp relay agent với tên file được đặt là ```relay.sh```
+- Chuẩn bị đoạn script để cấu hình dhcp relay agent với tên file được đặt là ```relay.sh``` trên máy DHCP Relay Agent
   
 
   
