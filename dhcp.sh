@@ -21,7 +21,7 @@ else
 fi
 
 # ---------------------------------------------Utils
-# Hàm kiểm tra định dạng địa chỉ IP
+# Hàm kiểm tra định dạng địa chỉ IP 
 function is_valid_ip() {
   local  ip=$1
   local  stat=1
@@ -242,7 +242,7 @@ if [[ "$choice" == "1" ]]; then
     create_scope
 elif [[ "$choice" == "2" ]]; then
     update_scope
-elif [[ "$choice" == "3" ]];then
+elif [[ "$choice" == "3" ]]; then
     find_scope
 elif [[ "$choice" == "4" ]]; then
     delete_scope
@@ -250,6 +250,8 @@ elif [[ "$choice" == "5" ]]; then
     create_host
 elif [[ "$choice" == "6" ]]; then
     delete_host
+elif [[ "$choice" == "7" ]]; then
+     find_host
 elif [[ "$choice" == "8" ]]; then
     start_dhcp
 elif [[ "$choice" == "9" ]]; then
@@ -258,8 +260,6 @@ elif [[ "$choice" == "10" ]]; then
     restart_dhcp
 elif [[ "$choice" == "11" ]]; then
     fix_SElinux
-elif [[ "$choice" == "7" ]]; then
-     find_host
 elif [[ "$choice" == "12" ]]; then
      exit 1
 else
