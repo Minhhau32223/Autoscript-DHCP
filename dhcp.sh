@@ -1,6 +1,6 @@
 #!/bin/bash
 #---------------Khai báo biến
-
+ 
 conf_file="/etc/dhcp/dhcpd.conf"
 
 
