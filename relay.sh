@@ -10,3 +10,4 @@ sed -i "9s#.*#$NEWLINE#" /etc/systemd/system/dhcrelay.service
 
 systemctl --system daemon-reload
 systemctl start dhcrelay.service
+
